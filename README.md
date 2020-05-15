@@ -73,7 +73,7 @@ Host: 192.168.1.1      Ports: 10000/open/tcp////
 ```
 Please note, as it was not specified, the assumption was made, that the requirement "change on target host" means any change in port state (e.g. closed->open and also open->closed).
 NOTE: I believe the code is ugly. Everytime I write Python code and lookup alternatives to the same solution on the Internet, I am surprised on how nice the code can actually be...
-### Exercise 2
+### Exercise 3
 #### Syslog configuration
 Syslog configuration is configured automatically by the **martin.rsyslog** Ansible role. This role is applied during Vagrant provisining phase by **playbook.yml** (which includes also the **martin.docker** role).
 #### Ansible
