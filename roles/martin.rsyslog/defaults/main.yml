@@ -1,0 +1,7 @@
+---
+remote_syslog_send_default_logs: false
+remote_syslog_send_custom_logs: false
+remote_syslog_files: []
+remote_syslog_target: "127.0.0.1"
+remote_syslog_port: "514"
+remote_syslog_protocol: "tcp"

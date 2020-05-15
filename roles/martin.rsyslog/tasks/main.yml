@@ -1,0 +1,23 @@
+---
+- name: deploy conf for remote rsyslog (default logs)
+  template:
+    src: "remote-syslog-default.conf.j2"
+    dest: "/etc/rsyslog.d/01-remote-syslog-default.conf"
+    owner: root
+    group: root
+    mode: 0644
+    force: yes
+  when: remote_syslog_send_default_logs
+  notify:
+  - restart rsyslog
+- name: deploy conf for remote rsyslog (custom log files)
+  template:
+    src: "remote-syslog-custom.conf.j2"
+    dest: "/etc/rsyslog.d/02-remote-syslog-custom.conf"
+    owner: root
+    group: root
+    mode: 0644
+    force: yes
+  when: remote_syslog_send_custom_logs and (remote_syslog_custom_files|length > 0)
+  notify:
+  - restart rsyslog

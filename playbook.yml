@@ -1,0 +1,15 @@
+---
+- name: provisionining playbook
+  hosts: all
+  roles:
+  - role: martin.docker
+  - role: martin.rsyslog
+    vars:
+      remote_syslog_send_default_logs: true
+      remote_syslog_send_custom_logs: true
+      remote_syslog_custom_files:
+      - '/var/test1.log'
+      - '/var/test2.log'
+      remote_syslog_target: "192.168.1.17"
+      remote_syslog_port: "514"
+      remote_syslog_protocol: "tcp"

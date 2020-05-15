@@ -1,0 +1,5 @@
+---
+- name: Docker provisionining playbook
+  hosts: all
+  roles:
+  - role: martin.docker
